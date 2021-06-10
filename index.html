@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+        Checkout
+      </h1>
+    </header>
+
+    <main>
+
+      <form name="form">
+
+        <section class="items">
+
+          <div class="item-container">
+            <div class="img-wrap">
+              <img src="photo1.png" alt="bag">
+            </div>
+            <div class="item-detail">
+              <h3 class="item-name">Vintage Backbag</h3>
+              <div class="item-price">
+                <span class="price-discount">$54.99</span>
+                <span class="price-proper">$94.99</span>
+              </div>
+
+              <div class="item-amount-box">
+                <button class="minus" type="button">-</button>
+                <input type="number" class="amout-item1" value="1">
+                <button class="plus" type="button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <div class="img-wrap">
+              <img src="photo2.png" alt="Levi Shoes">
+            </div>
+            <div class="item-detail">
+              <h3 class="item-name">Levi Shoes</h3>
+              <div class="item-price">
+                <span class="price-discount">$74.99</span>
+                <span class="price-proper">$124.99</span>
+              </div>
+
+              <div class="item-amount-box">
+                <button class="minus" type="button">-</button>
+                <input type="number" class="amout-item1" value="1">
+                <button class="plus" type="button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <table>
+            <tr>
+              <th>Shipping</th>
+              <td>$19</td>
+            </tr>
+            <tr>
+              <th>Total</th>
+              <td>$148.98</td>
+            </tr>
+          </table>
+
+        </section>
+
+        <section class="contact">
+
+          <div class="contact-info">
+            <h5 class="heading">
+              Contact infomation
+              </h3>
+              <div class="input-container">
+                <label for="email">E-mail</label>
+                <div class="input-box">
+                  <span class="material-icons">
+                    email
+                  </span>
+                  <input required type="email" name="email" id="email" placeholder="Enter your email...">
+                </div>
+              </div>
+
+              <div class="input-container">
+                <label for="phone">Phone</label>
+                <div class="input-box">
+                  <span class="material-icons">
+                    call
+                  </span>
+                  <input required type="tel" name="phone" id="phone" placeholder="Enter your phone...">
+                </div>
+              </div>
+
+              <div class="shipping-address">
+                <h5 class="heading">
+                  Shipping address
+                  </h3>
+
+                  <div class="input-container">
+                    <label for="name">Full name</label>
+                    <div class="input-box">
+                      <span class="material-icons">
+                        account_circle
+                      </span>
+                      <input required type="text" name="name" id="name" placeholder="Rodney Cotton">
+                    </div>
+                  </div>
+
+                  <div class="input-container">
+                    <label for="address">Address</label>
+                    <div class="input-box">
+                      <span class="material-icons">
+                        home
+                      </span>
+                      <input required type="text" name="address" id="address" placeholder="Your address..">
+                    </div>
+                  </div>
+
+                  <div class="input-container">
+                    <label for="address">City</label>
+                    <div class="input-box">
+                      <span class="material-icons">
+                        location_city
+                      </span>
+                      <input required type="text" name="address" id="address" placeholder="Your city..">
+                    </div>
+                  </div>
+
+                  <div class="input-two-column">
+                    <div class="input-container">
+                      <label for="address">Country</label>
+                      <div class="input-box select-box">
+                        <span class="material-icons">
+                          apartment
+                        </span>
+                        <select required name="country" id="country">
+                          <option value="" selected>Your country..</option>
+                          <option value="US">US</option>
+                          <option value="UK">UK</option>
+                          <option value="India">India</option>
+                          <option value="China">China</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="input-container">
+                      <label for="postal">Postal code</label>
+                      <div class="input-box">
+                        <span class="material-icons">
+                          markunread_mailbox
+                        </span>
+                        <input required type="text" name="postal" id="postal" placeholder="Your postal code..">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="input-container checkbox">
+                    <label for="save" class="save">
+                      <input type="checkbox" id="save" name="save">
+                      <span class="checkbox-parts">Save this information for next time</span>
+                    </label>
+                  </div>
+
+              </div>
+
+              <button class="continue" type="submit" id="continue">
+                Continue
+              </button>
+
+
+
+        </section>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <span class="author">created by <a href="#">mk-9433</a> - devChallenges.io</span>
+    </footer>
+  </div>
+
+  <script>
+    function submitClick() {
+      alert('completed');
+    }
+
+    let button = document.getElementById('continue');
+    button.addEventListener('click', submitClick);
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,430 @@
+*{
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+
+  color: #4E5150;
+
+  background-color: white;
+}
+
+#container{
+  padding: 32px 3% 24px 3%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+
+}
+
+header h1{
+  font-size: 2rem;
+
+  margin: 0;
+  padding: 0;
+}
+
+main .items{
+  background-color: #F2F2F2;
+  padding: 30px;
+  border-radius: 12px;
+
+  margin-top: 20px;
+}
+
+main .items .item-container {
+  display: flex;
+
+  margin-top: 28px;
+}
+
+.item-center-wrap{
+  margin: 0 auto;
+}
+
+main .items .item-container:first-child{
+  margin-top: 0;
+}
+
+main .items .item-container .img-wrap{
+  margin: 0 auto;
+}
+
+main .items .item-container img{
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+main .items .item-container .item-detail{
+  padding-left: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 40%;
+
+}
+main .items .item-container .item-detail .item-name{
+  font-size: 1rem;
+
+  margin: 0;
+  padding: 0;
+
+}
+
+main .items .item-container .item-detail .price-discount{
+  color: #F2994A;
+  font-size: 1.2rem;
+
+  display: inline-block;
+  margin-right: 10px;
+
+}
+
+main .items .item-container .item-detail .item-price{
+  margin-top: 10px;
+
+}
+
+main .items .item-container .item-detail .item-amount-box{
+  width: 126px;
+  height: 50px;
+  border: #828282 solid 1px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+}
+main .items .item-container .item-detail .item-amount-box input{
+  width: 44px;
+
+  font-size: 1.5rem;
+
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+
+main .items .item-container .item-detail .item-amount-box button{
+  font-size: 1rem;
+  color: #828282;
+  
+  width: 20px;
+  height: 20px;
+
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+
+  text-align: center;
+  align-items: center;
+
+  margin: 0 10px;
+}
+
+main .items .item-container .item-detail .item-amount-box input[type=number]::-webkit-inner-spin-button {
+  display: none;
+
+}
+
+main .items .item-container .item-detail .price-proper{
+  font-size: 0.8rem;
+  text-decoration: line-through;
+}
+
+main .items table{
+  font-size: 1.2rem;
+  color: #333;
+  width: 100%;
+
+  margin-top: 88px;
+}
+
+main .items table tr{
+  border-top: #bdbdbd solid 1px;
+  display: block;
+  width: 100%;
+
+  padding: 10px 0;
+}
+
+main .items table th{
+  text-align: left;
+  width: 100%;
+}
+
+main .items table td{
+  text-align: right;
+  width: 100%;
+}
+
+main .items table tr:last-child{
+  padding-bottom: 0;
+}
+
+
+/* Contact Information */
+
+main .contact-info h5.heading{
+  font-size: 1.2rem;
+  color: #333;
+
+  margin: 0;
+  padding: 0;
+
+  margin-top: 40px;
+
+}
+
+main .contact-info .input-container{
+  margin-top: 16px;
+}
+
+main .contact-info label{
+  font-size: 0.8rem;
+  color: #4f4f4f;
+  display: block;
+
+  margin-bottom: 5px;
+}
+
+main .contact-info .input-box{
+  position: relative;
+}
+
+main .contact-info .material-icons{
+  position: absolute;
+
+  top: 10px;
+  left: 12px;
+}
+
+
+
+main .contact-info input,
+main .contact-info select{
+  font-size: 1rem;
+  color: #333;
+
+  border: #828282 solid 1px;
+  border-radius: 12px;
+  margin: 0;
+  vertical-align: middle;
+  padding: 12px;
+
+  width: 100%;
+
+  padding-left: 45px;
+}
+
+main .contact-info select{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+main .contact-info input::placeholder{
+  color: #828282;
+}
+
+main .contact-info .input-two-column{
+  display: flex;
+  justify-content: space-between;
+}
+
+main .contact-info .input-two-column .input-container{
+  width: 47%;
+}
+
+/* ドロップダウンリストのスタイル */
+
+main .contact-info select {
+  -webkit-appearance: none;
+  appearance: none; /* デフォルトのスタイルを無効 */
+}
+main .contact-info .select-box::-ms-expand {
+  display: none; /* デフォルトのスタイルを無効(IE用) */
+}
+main .contact-info .select-box:after {
+  font-family: 'Material Icons';
+  content: "expand_more";
+  font-size: 15px;
+  color: #828282;
+
+  position: absolute;
+  right: 14px;
+  top: 15px;
+  width: 15px;
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+
+/* チェックボックスのスタイル */
+main .contact-info .checkbox{
+  margin-top: 18px;
+  display: block;
+}
+
+main .contact-info .checkbox input{
+  display: none;
+  width: 100%;
+}
+
+main .contact-info .checkbox .checkbox-parts{
+  padding-left: 26px;
+  position:relative;
+  margin-right: 20px;
+  padding-top: 2px;
+}
+main .contact-info .checkbox .checkbox-parts::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #828282;
+  border-radius: 4px;
+}
+main .contact-info .checkbox input:checked + .checkbox-parts{
+  color: #4f4f4f;
+}
+main .contact-info .checkbox input:checked + .checkbox-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 4px;
+  width: 7px;
+  height: 12px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #4f4f4f;
+  border-right: 3px solid #4f4f4f;
+}
+
+main .contact-info button{
+  border: none;
+  padding: 18px 46px;
+
+  font-size: 1.25rem;
+  background-color: #F2994A;
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+
+  display: block;
+  margin: 0 0 0 auto;
+
+  margin-top: 18px;
+}
+
+input:focus,
+select:focus{
+  outline: 2px solid #F2994A;
+}
+
+footer{
+  font-family: 'Montserrat', sans-serif;
+  color: #bdbdbd;
+  font-size: 0.8rem;
+
+  margin: 0;
+  padding: 0;
+
+  padding: 24px 0;
+  display: block;
+  margin: 0 auto;
+
+  margin-top: 90px;
+}
+
+footer a{
+  font-weight: 700;
+}
+
+button:hover{
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 425px){
+  main .items .item-container .item-detail .price-discount{
+    display: block;
+  } 
+
+  main .items .item-container .img-wrap{
+    margin: 0;
+    width: 50%;
+  }
+}
+
+  @media only screen and (max-width: 320px){ 
+    main .items .item-container .img-wrap{
+      width: 100%;
+    }
+
+  main .items .item-container{
+    flex-direction: column;
+  }
+
+  main .items .item-container .item-detail{
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  main .items .item-container .item-detail .item-name,
+  main .items .item-container .item-detail .item-price{
+    text-align: center;
+  }
+
+}
+
+@media only screen and (min-width: 1024px){
+  main .items .item-container .item-detail .price-discount{
+    display: block;
+  }
+
+  main form{
+    display: flex;
+    max-width: 100%;
+  }
+
+  main form .items{
+    width: 40%;
+    order: 2;
+  }
+
+  main form .contact{
+    width: 60%;
+    order: 1;
+
+    padding-right: 90px;
+  }
+
+  #container{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+
+}
