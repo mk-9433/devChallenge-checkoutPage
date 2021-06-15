@@ -30,40 +30,40 @@
 
         <section class="items">
 
-          <div class="item-container">
+          <div class="item-container" id="item1">
             <div class="img-wrap">
               <img src="photo1.png" alt="bag">
             </div>
             <div class="item-detail">
               <h3 class="item-name">Vintage Backbag</h3>
               <div class="item-price">
-                <span class="price-discount">$54.99</span>
+                <span class="price-discount">$<span class="itemPrice">54.99</span></span>
                 <span class="price-proper">$94.99</span>
               </div>
 
               <div class="item-amount-box">
-                <button class="minus" type="button">-</button>
-                <input type="number" class="amout-item1" value="1">
-                <button class="plus" type="button">+</button>
+                <button class="minusBtn" type="button" id="minusBtn">-</button>
+                <input type="number" class="item-amount" value="1" id="currentAmount">
+                <button class="plusBtn" type="button" id="plusBtn">+</button>
               </div>
             </div>
           </div>
 
-          <div class="item-container">
+          <div class="item-container" id="item2">
             <div class="img-wrap">
               <img src="photo2.png" alt="Levi Shoes">
             </div>
             <div class="item-detail">
               <h3 class="item-name">Levi Shoes</h3>
               <div class="item-price">
-                <span class="price-discount">$74.99</span>
+                <span class="price-discount">$<span class="itemPrice">74.99</span></span>
                 <span class="price-proper">$124.99</span>
               </div>
 
               <div class="item-amount-box">
-                <button class="minus" type="button">-</button>
-                <input type="number" class="amout-item1" value="1">
-                <button class="plus" type="button">+</button>
+                <button class="minusBtn" type="button" id="minusBtn">-</button>
+                <input type="number" class="item-amount" value="1" id="currentAmount">
+                <button class="plusBtn" type="button" id="plusBtn">+</button>
               </div>
             </div>
           </div>
@@ -71,11 +71,11 @@
           <table>
             <tr>
               <th>Shipping</th>
-              <td>$19</td>
+              <td>$<span id="shippingFee">19</span></td>
             </tr>
             <tr>
               <th>Total</th>
-              <td>$148.98</td>
+              <td>$<span id="totalPrice">148.98</span></td>
             </tr>
           </table>
 
@@ -202,6 +202,78 @@
     let button = document.getElementById('continue');
     button.addEventListener('click', submitClick);
 
+    // ページ読み込み時に実行したい処理
+    window.onload = function () {
+      // const item1Ccontent = document.getElementById('item1');
+      // const item1AmountElement = item1Ccontent.getElementByClass('item-amount');
+      // const item1Amount = parseInt(item1AmountElement.value);
+
+      // const item2_content = document.getElementById('item2');
+      // const item2_amount = item2_content.getElementByClass('item-amount');
+
+      // const shippingFee = parseFloat(document.getElementById('shippingFee').innerHTML);
+
+      // document.getElementById('totalPrice').innerHTML = 123;
+
+    }
+
+    //数量を増やす
+    function plusAmount(itemNumContent) {
+      //const item1Ccontent = document.getElementById(itemNum);
+      const currentAmountElement = itemNumContent.getElementsByClassName('item-amount')[0];
+      const currentAmount = parseInt(currentAmountElement.value);
+      const addedAmount = currentAmount + 1;
+      itemNumContent.getElementsByClassName('item-amount')[0].value = addedAmount;
+
+      const itemPrice = parseFloat(itemNumContent.getElementsByClassName('itemPrice')[0].innerHTML);
+      const totalPrice = parseFloat(document.getElementById('totalPrice').innerHTML);
+      //const shippingFee = parseFloat(document.getElementById('shippingFee').innerHTML);
+      const newTotalPrice = totalPrice + itemPrice;
+      document.getElementById('totalPrice').innerHTML = newTotalPrice.toFixed(2);
+
+    }
+
+    const plusBtn = document.getElementsByClassName('plusBtn');
+
+    plusBtn[0].addEventListener('click', function () {
+      const itemNumContent = plusBtn[0].parentNode.parentNode.parentNode;
+      plusAmount(itemNumContent)
+    }, false);
+
+    plusBtn[1].addEventListener('click', function () {
+      const itemNumContent = plusBtn[1].parentNode.parentNode.parentNode;
+      plusAmount(itemNumContent)
+    }, false);
+
+    //数量を減らす
+    function minusAmount(itemNumContent) {
+      //const item1Ccontent = document.getElementById('item1');
+      const currentAmountElement = itemNumContent.getElementsByClassName('item-amount')[0];
+      const currentAmount = parseInt(currentAmountElement.value);
+
+      if (currentAmount > 1) {
+        itemNumContent.getElementsByClassName('item-amount')[0].value = currentAmount - 1;
+
+        const itemPrice = parseFloat(itemNumContent.getElementsByClassName('itemPrice')[0].innerHTML);
+        const totalPrice = parseFloat(document.getElementById('totalPrice').innerHTML);
+        //const shippingFee = parseFloat(document.getElementById('shippingFee').innerHTML);
+        const newTotalPrice = totalPrice - itemPrice;
+        document.getElementById('totalPrice').innerHTML = newTotalPrice.toFixed(2);
+      }
+
+    }
+
+    const minusBtn = document.getElementsByClassName('minusBtn');
+
+    minusBtn[0].addEventListener('click', function () {
+      const itemNumContent = minusBtn[0].parentNode.parentNode.parentNode;
+      minusAmount(itemNumContent)
+    }, false);
+
+    minusBtn[1].addEventListener('click', function () {
+      const itemNumContent = minusBtn[1].parentNode.parentNode.parentNode;
+      minusAmount(itemNumContent)
+    }, false);
 
 
   </script>
